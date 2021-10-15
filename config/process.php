@@ -4,12 +4,30 @@
 
    include_once('connection.php');
    include_once('url.php');
+   
+   if (!empty($_GET)) {
+      //1 contato
 
-   $contacts = [];
+      $id;
+      $id = $_GET['id'];
+   
+      $query = "SELECT * FROM contacts WHERE id = :id";
 
-   $query = "SELECT * FROM contacts";
+      $stmt = $conn->prepare($query);
+      $stmt->bindParam(":id", $id);
+      $stmt->execute();
 
-   $stmt = $conn->prepare($query);
-   $stmt->execute();
+      $contact = $stmt->fetch();
 
-   $contacts = $stmt->fetchAll();
+   } else {
+      //Diversos contatos
+
+      $contacts = [];
+
+      $query = "SELECT * FROM contacts";
+
+      $stmt = $conn->prepare($query);
+      $stmt->execute();
+
+      $contacts = $stmt->fetchAll();
+   }
