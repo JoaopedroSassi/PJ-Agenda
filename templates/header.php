@@ -2,9 +2,14 @@
    include_once ('config/url.php');
    include_once ('config/process.php');
 
-   if (isset($_SESSION['msg'])) {
+   if (isset($_SESSION['msg']) && ($_SESSION['msg-del'] == '')) {
       $print_msg = $_SESSION['msg'];
       $_SESSION['msg'] = '';
+      $_SESSION['msg-del'] = '';
+   } elseif (isset($_SESSION['msg-del'])) {
+      $print_msg_del = $_SESSION['msg-del'];
+      $_SESSION['msg'] = '';
+      $_SESSION['msg-del'] = '';
    }
    
 ?>

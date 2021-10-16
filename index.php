@@ -4,6 +4,10 @@
    <div class="container">
       <?php if (isset($print_msg) && $print_msg != ''): ?>
          <p id="msg"><?= $print_msg ?></p>
+      <?php else: ?>
+         <?php if (isset($print_msg_del) && $print_msg_del != ''): ?>
+            <p id="msg-del"><?= $print_msg_del ?></p>
+         <?php endif; ?>
       <?php endif; ?>
 
       <h1 id="main-title">Minha Agenda</h1>
@@ -26,7 +30,11 @@
                      <td class="actions">
                         <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>"><i class="bi bi-arrows-angle-expand"></i></a>
                         <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact['id'] ?>"><i class="bi bi-pencil"></i></a>
-                        <button type="submit" class="delete-btn"><i class="bi bi-person-dash-fill"></i></button>
+                        <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
+                           <input type="hidden" name="type" value="Delete">
+                           <input type="hidden" name="id" value="<?= $contact['id'] ?>">
+                           <button type="submit" class="delete-btn"><i class="bi bi-person-dash-fill"></i></button>
+                        </form>
                      </td>
                   </tr>
                <?php endforeach; ?>

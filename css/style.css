@@ -68,6 +68,17 @@
    margin-top: 30px;
 }
 
+#msg-del {
+   color: #FFF;
+   background-color: #e21b1b;
+   border: 1px solid #e21b1b;
+   padding: 10px;
+   text-align: center;
+   max-width: 500px;
+   margin: 0 auto;
+   margin-top: 30px;
+}
+
 /* Individual contact */
 #view-contact-container{
    max-width: 500px;
@@ -113,6 +124,11 @@
 #edit-form{
    max-width: 500px;
    margin: 0 auto;
+}
+
+/* Delete form */
+.delete-form{
+   display: inline-block;
 }
 
 /* Mobile */
