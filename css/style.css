@@ -99,3 +99,19 @@
    background-color: #0078FF;
 }
 
+/* Create Contact */
+#btn-create{
+   margin-top: 20px;
+   margin-bottom: 30px;
+}
+
+#create-form input{
+   margin-bottom: 15px;
+}
+
+#create-form,
+#edit-form{
+   max-width: 500px;
+   margin: 0 auto;
+}
+
