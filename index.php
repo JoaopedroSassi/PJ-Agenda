@@ -25,7 +25,7 @@
                      <td scope="row"><?= $contact['phone'] ?></td>
                      <td class="actions">
                         <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>"><i class="bi bi-arrows-angle-expand"></i></a>
-                        <a href="#"><i class="bi bi-pencil"></i></a>
+                        <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact['id'] ?>"><i class="bi bi-pencil"></i></a>
                         <button type="submit" class="delete-btn"><i class="bi bi-person-dash-fill"></i></button>
                      </td>
                   </tr>
