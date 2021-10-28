@@ -1,9 +1,9 @@
 <?php
 
-   $host = "localhost:3312";
+   $host = "localhost";
    $dbname = "db_agenda";
    $user = "root";
-   $pass = "";
+   $pass = "loj159951";
 
    try {
       
